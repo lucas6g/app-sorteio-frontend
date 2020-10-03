@@ -1,0 +1,86 @@
+/* max width significa que o maximo da largura que o elemento pode atingir */
+/* min width impoe que o elemento deve ter essa largura   */
+
+:root {
+  --gradient: linear-gradient(90deg, #a66bef, #ca40ab, #ffb658);
+}
+.navbar {
+  background-image: var(--gradient);
+  min-height: 97px;
+  animation: bg-animation 25s infinite;
+  background-size: 400%;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+.navbar .logo {
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.navbar .nav {
+  margin-left: auto;
+  margin-right: 30%;
+}
+
+.navbar .btn-toggle {
+  border: 2px solid white;
+  color: #fff;
+  outline: none;
+}
+.navbar .menu {
+  transition: height 2s ease;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url('../../assets/img/menu.png');
+  margin-top: 10px;
+}
+
+.navbar .nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar .nav .nav-link:hover {
+  color: #fff;
+}
+/* link para se login */
+
+.navbar .nav .nav-link-signin {
+  margin-left: 50px;
+  border: 2px solid white;
+  border-radius: 9px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+}
+
+.navbar .nav .nav-link-signin i {
+  margin-left: 10px;
+}
+
+/* correçoes btn input */
+@media (max-width: 1000px) {
+  .navbar .nav .nav-link-signin {
+    width: 100px;
+    margin-left: 0;
+  }
+}
+
+/* correçoes menu responsivo */
+@media (min-width: 992px) {
+  .navbar .btn-toggle {
+    display: none;
+  }
+}
