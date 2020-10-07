@@ -1,0 +1,46 @@
+:root {
+  --gradient: linear-gradient(90deg, #a66bef, #ca40ab, #ffb658);
+}
+.footer {
+  background-image: var(--gradient);
+  min-height: 97px;
+  animation: bg-animation 25s infinite;
+  background-size: 400%;
+  margin-top: auto;
+}
+.footer .social-media,
+.footer .contact,
+.footer .terms-of-use,
+h4 {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+.footer .contact,
+.footer .terms-of-use,
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: bold;
+}
+.footer .contact,
+.footer .terms-of-use,
+.nav-link:hover {
+  color: white;
+}
+
+.footer .social-media .social-media-line {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 8px;
+}
+.footer .social-media .social-media-line a {
+  padding-left: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 25px;
+}
+.footer .social-media .social-media-line a:hover {
+  color: white;
+}

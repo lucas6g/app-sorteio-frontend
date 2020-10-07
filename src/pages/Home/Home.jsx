@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Teste from '../../components/Pagination'
-import {
-  Navbar,
-  Nav,
-  Button,
-  FormControl,
-  Form,
-  Container,
-  Row,
-  Col,
-  Pagination,
-} from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
-import iphoneImg from '../../assets/img/iphone.jpg'
+//components
+import Header from '../../components/Header/Header'
+import SortitionCard from '../../components/SortitionCard/SortitionCard'
+import Paginate from '../../components/Paginate/Paginate'
+import Footer from '../../components/Footer/Footer'
 
 import './Home.styles.css'
 // adicionar classes para sobrescrever as do boot stape
@@ -21,7 +14,7 @@ import './Home.styles.css'
 function Home() {
   const [sortitions, setSortitions] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortitionPerPage] = useState(9)
+  const [sortitionPerPage] = useState(15)
 
   useEffect(() => {
     async function getSortitions() {
@@ -35,181 +28,41 @@ function Home() {
   const indexLastSortition = currentPage * sortitionPerPage
   const indexOfFirstSortition = indexLastSortition - sortitionPerPage
   const currentSortitions = sortitions.slice(
-    //pega uma parte do array e cria um novo
+    //pega uma parte do array e cria um novo com a quantidade
     indexOfFirstSortition,
     indexLastSortition
   )
 
   return (
     <>
-      <Navbar className="navbar" expand="lg">
-        <div className="logo-container">
-          <Navbar.Brand className="logo" href="#home">
-            Sorteio Validado
-          </Navbar.Brand>
-        </div>
-
-        <Navbar.Toggle
-          className="btn-toggle"
-          aria-controls="basic-navbar-nav"
-        />
-        <Navbar.Collapse className="menu" id="basic-navbar-nav">
-          <Nav className="nav">
-            <Nav.Link className="nav-link" href="#home">
-              Sorteios
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#tes">
-              Regulamento
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#tfddf">
-              Sobre
-            </Nav.Link>
-            <Nav.Link className="nav-link" href="#lifdfk">
-              Contato
-            </Nav.Link>
-
-            <Form className="form-search" inline>
-              <FormControl
-                type="text"
-                placeholder="Nome do premio"
-                className="mr-sm-2 input-search"
-              />
-              <Button className="btn-search" variant="outline-light">
-                Buscar
-              </Button>
-            </Form>
-
-            <Nav.Link className="nav-link-signin" href="#lifddsfk">
-              Entrar
-              <i className="fas fa-sign-in-alt"></i>
-            </Nav.Link>
-
-            <Nav.Link className="nav-link-signup" href="#lifddjjhjsfk">
-              Cadastrar-se
-              <i className="fas fa-user-plus"></i>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
+      <Header />
       <Container className="mt-5">
         <Row className="line">
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="sortition-card">
-              <img className="sortition-img" src={iphoneImg} alt="" />
-              <h1>titulo</h1>
-              <h5>Nome premio</h5>
-              <span>
-                Data do sorteio: <time>16/02/1992</time>
-              </span>
-
-              <footer className="sortition-card-footer">
-                <img src={iphoneImg} alt="" />
-                <strong>Usercriador</strong>
-                <br />
-                <strong>Participantes: 10</strong>
-              </footer>
-            </div>
-          </Col>
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
+          <SortitionCard />
         </Row>
       </Container>
-
-      {currentSortitions.map((sortition, index) => {
-        return <h1 key={index}>{sortition.title}</h1>
-      })}
-
-      <Teste
+      <Paginate
         totalSortitions={sortitions.length}
         sortitionPerPage={sortitionPerPage}
+        // altero a pagina atual com base no numero da paginação
         paginate={(pageNumber) => {
           setCurrentPage(pageNumber)
         }}
       />
+
+      {/* array dividido */}
+      {/* {currentSortitions.map((sortition, index) => {
+        return <h1 key={index}>{sortition.title}</h1>
+      })} */}
+      <Footer />
     </>
   )
 }
