@@ -1,11 +1,12 @@
 import React from 'react'
-import Home from './pages/Home/Home.jsx'
+
+import Routes from './Routes'
 
 // css global
 import './global.css'
 
 function App() {
-  return <Home />
+  return <Routes />
 }
 
 export default App

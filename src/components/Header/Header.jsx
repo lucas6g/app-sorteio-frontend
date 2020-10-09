@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Navbar, Nav, Button, FormControl, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './Header.styles.css'
 function Header() {
@@ -15,16 +16,17 @@ function Header() {
       <Navbar.Toggle className="btn-toggle" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="menu" id="basic-navbar-nav">
         <Nav className="nav">
-          <Nav.Link className="nav-link" href="#home">
+          <Link className="nav-link" to="/signup">
             Sorteios
-          </Nav.Link>
-          <Nav.Link className="nav-link" href="#tes">
+          </Link>
+
+          <Nav.Link className="nav-link" href="#">
             Regulamento
           </Nav.Link>
-          <Nav.Link className="nav-link" href="#tfddf">
+          <Nav.Link className="nav-link" href="#">
             Sobre
           </Nav.Link>
-          <Nav.Link className="nav-link" href="#lifdfk">
+          <Nav.Link className="nav-link" href="#">
             Contato
           </Nav.Link>
 
@@ -32,22 +34,23 @@ function Header() {
             <FormControl
               type="text"
               placeholder="Nome do premio"
-              className="mr-sm-2 input-search"
+              className="mr-sm-2 input-search shadow-none"
             />
-            <Button className="btn-search" variant="outline-light">
+
+            <Button className="btn-search shadow-none" variant="outline-light">
               Buscar
             </Button>
           </Form>
 
-          <Nav.Link className="nav-link-signin" href="#lifddsfk">
+          <Link to="/signup" className="nav-link-signin">
             Entrar
             <i className="fas fa-sign-in-alt"></i>
-          </Nav.Link>
+          </Link>
 
-          <Nav.Link className="nav-link-signup" href="#lifddjjhjsfk">
+          <Link to="/signup" className="nav-link-signup">
             Cadastrar-se
             <i className="fas fa-user-plus"></i>
-          </Nav.Link>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
