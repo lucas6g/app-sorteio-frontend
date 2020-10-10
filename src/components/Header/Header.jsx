@@ -42,7 +42,7 @@ function Header() {
             </Button>
           </Form>
 
-          <Link to="/signup" className="nav-link-signin">
+          <Link to="/signin" className="nav-link-signin">
             Entrar
             <i className="fas fa-sign-in-alt"></i>
           </Link>
