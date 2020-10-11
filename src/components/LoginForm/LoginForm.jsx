@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Form, Button } from 'react-bootstrap'
 
+import Input from '../Input/Input'
+import CustomButton from '../CustomButton/CustomButton'
+
 import './LoginForm.styles.css'
 function LoginForm({ isSignin, title, btnLabel, to, loginLink }) {
   return (
@@ -10,61 +13,42 @@ function LoginForm({ isSignin, title, btnLabel, to, loginLink }) {
 
       <Form className="login-form">
         {!isSignin ? (
-          <Form.Group className="input-block" controlId="formBasicText">
-            <Form.Label className="login-form-label">
-              Nome de Usuario{' '}
-            </Form.Label>
-            <Form.Control
-              className="input shadow-none"
-              type="text"
-              placeholder="Escolha um nome"
-            />
-          </Form.Group>
+          <Input
+            controlId="formBasicText"
+            type="text"
+            label="Nome de Usuario"
+            placeholder="Escolha um nome"
+          />
         ) : null}
-        <Form.Group className="input-block" controlId="formBasicEmail">
-          <Form.Label className="login-form-label">Email </Form.Label>
-          <Form.Control
-            className="input shadow-none"
-            type="email"
-            placeholder="Seu Email"
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
 
-        <Form.Group className="input-block" controlId="formBasicPassword">
-          <Form.Label className="login-form-label">Senha</Form.Label>
-          <Form.Control
-            className="input shadow-none"
-            type="password"
-            placeholder="Escolha Sua Senha"
-          />
-        </Form.Group>
+        <Input
+          controlId="formBasicEmail"
+          type="email"
+          label="Email"
+          placeholder="Digite seu Email"
+        />
+
+        <Input
+          controlId="formBasicPassword"
+          type="password"
+          label="Senha"
+          placeholder={isSignin ? 'Digite sua senha' : 'Escolha uma senha'}
+        />
 
         {!isSignin ? (
-          <Form.Group
-            className="input-block"
+          <Input
             controlId="formBasicConfirmPassword"
-          >
-            <Form.Label className="login-form-label">
-              Confirme Sua Senha
-            </Form.Label>
-            <Form.Control
-              className="input shadow-none"
-              type="password"
-              placeholder="Repita a Senha"
-            />
-          </Form.Group>
+            type="password"
+            label="Confirme a Senha"
+            placeholder="Confirme a senha"
+          />
         ) : null}
 
         <Link to={to} className="login-link">
           {loginLink}
         </Link>
 
-        <Button className="btn-login-form shadow-none" type="submit">
-          {btnLabel}
-        </Button>
+        <CustomButton type="submit">{btnLabel}</CustomButton>
       </Form>
     </Container>
   )

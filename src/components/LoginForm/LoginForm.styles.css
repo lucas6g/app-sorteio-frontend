@@ -24,32 +24,6 @@
   width: 100%;
 }
 
-.login-form .input-block .login-form-label {
-  font-weight: bold;
-}
-
-.form-container .login-form .btn-login-form {
-  background-image: var(--gradient);
-  font-weight: bold;
-  border: 1px solid white;
-  margin-top: 30px;
-}
-
 .form-container .login-form .login-link {
   color: #262626;
-}
-
-.form-container .login-form .input-block {
-  width: 70%;
-}
-
-.form-container .login-form .input-block .input:focus {
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top left, #a66bef, #ca40ab, #ffb658);
-  border: double 2px transparent;
-}
-.form-container .login-form .input-block .input {
-  outline: none;
 }

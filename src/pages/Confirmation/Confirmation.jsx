@@ -1,11 +1,12 @@
 import React from 'react'
-
+import { Container } from 'react-bootstrap'
 import './Confirmation.styles.css'
 
-function Confirmation(){
+function Confirmation() {
   return (
-    <h1>Confirmation</h1>
-
+    <Container fluid className="confirmation-container ">
+      <Container className="form-container mt-5"></Container>
+    </Container>
   )
 }
 
