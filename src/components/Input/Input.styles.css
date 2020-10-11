@@ -12,6 +12,7 @@
   background-image: linear-gradient(white, white),
     radial-gradient(circle at top left, #a66bef, #ca40ab, #ffb658);
   border: double 2px transparent;
+  caret-color: #262626;
 }
 .input-block .input {
   outline: none;
