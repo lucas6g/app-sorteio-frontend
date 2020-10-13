@@ -7,11 +7,13 @@ import './Header.styles.css'
 function Header() {
   return (
     <Navbar className="navbar" expand="lg">
-      <div className="logo-container">
-        <Navbar.Brand className="logo" href="#home">
-          Sorteio Validado
-        </Navbar.Brand>
-      </div>
+      <Link to="/">
+        <div className="logo-container">
+          <Navbar.Brand className="logo" href="#home">
+            Sorteio Validado
+          </Navbar.Brand>
+        </div>
+      </Link>
 
       <Navbar.Toggle className="btn-toggle" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="menu" id="basic-navbar-nav">

@@ -6,6 +6,7 @@ import Signup from './pages/Signup/Signup'
 import Signin from './pages/Signin/Signin'
 import Confirmation from './pages/Confirmation/Confirmation'
 import Sortition from './pages/Sortition/Sortition'
+import About from './pages/About/About'
 
 function Routes() {
   return (
@@ -15,6 +16,7 @@ function Routes() {
       <Route path="/signin" component={Signin} />
       <Route path="/confirmation" component={Confirmation} />
       <Route path="/sortition" component={Sortition} />
+      <Route path="/about" component={About} />
     </BrowserRouter>
   )
 }

@@ -11,7 +11,7 @@ function Sortition() {
   return (
     <>
       <Header />
-      <Container className="container-presentation mt-5" fluid>
+      <Container className="container-presentation mt-3" fluid>
         <Container className="sortition-container">
           <Row>
             <Col className="sortition-presentation" md={8}>
