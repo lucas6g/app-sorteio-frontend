@@ -11,6 +11,17 @@
   margin-bottom: 100px;
 }
 
+.form-container i {
+  margin-right: 267px;
+  background: var(--gradient);
+  font-size: 25px;
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .form-container .form-title {
   color: #262626;
   font-size: 36px;

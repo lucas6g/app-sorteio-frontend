@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import Signup from './pages/Signup/Signup'
 import Signin from './pages/Signin/Signin'
 import Confirmation from './pages/Confirmation/Confirmation'
+import Sortition from './pages/Sortition/Sortition'
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
       <Route path="/signup" component={Signup} />
       <Route path="/signin" component={Signin} />
       <Route path="/confirmation" component={Confirmation} />
+      <Route path="/sortition" component={Sortition} />
     </BrowserRouter>
   )
 }

@@ -16,16 +16,13 @@ function Header() {
       <Navbar.Toggle className="btn-toggle" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="menu" id="basic-navbar-nav">
         <Nav className="nav">
-          <Link className="nav-link" to="/signup">
+          <Link className="nav-link" to="/">
             Sorteios
           </Link>
-
-          <Nav.Link className="nav-link" href="#">
-            Regulamento
-          </Nav.Link>
-          <Nav.Link className="nav-link" href="#">
+          <Link className="nav-link" to="/about">
             Sobre
-          </Nav.Link>
+          </Link>
+
           <Nav.Link className="nav-link" href="#">
             Contato
           </Nav.Link>

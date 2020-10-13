@@ -9,6 +9,10 @@ import './LoginForm.styles.css'
 function LoginForm({ isSignin, title, btnLabel, to, loginLink }) {
   return (
     <Container className="form-container mt-5">
+      <Link to="/">
+        <i class="fas fa-arrow-left mb-4"></i>
+      </Link>
+
       <h1 className="form-title">{title}</h1>
 
       <Form className="login-form">

@@ -1,0 +1,98 @@
+.sortition-container .sortition-presentation .sortition-content {
+  box-shadow: rgba(175, 140, 140, 0.2) 0px 2px 6px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sortition-container .sortition-presentation .sortition-content .rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sortition-content .rules .rules-list {
+  list-style: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.sortition-content .rules .rules-list .rule-item {
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top left, #a66bef, #ca40ab, #ffb658);
+  padding: 8px;
+}
+
+.sortition-content .rules .rules-list .rule-item i {
+  margin-right: 10px;
+  color: green;
+}
+
+.sortition-container .sortition-info .sortition-data {
+  box-shadow: rgba(175, 140, 140, 0.2) 0px 2px 6px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortition-card-footer {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sortition-card-footer strong {
+  margin-left: 20px;
+}
+
+.sortition-card-footer img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.sortition-card-footer strong {
+  color: #262626;
+}
+
+.sortition-container .img-container {
+  margin-bottom: 8px;
+}
+
+.sortition-container h1 {
+  color: #262626;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.sortition-container .img-container img {
+  height: 383px;
+  width: 383px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* correções mobile */
+
+@media (max-width: 760px) {
+  .sortition-container .img-container img {
+    height: 200px;
+    width: 200px;
+  }
+  .sortition-container .sortition-presentation .sortition-content {
+    padding: 0px;
+  }
+  .sortition-container .sortition-info .sortition-data {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
