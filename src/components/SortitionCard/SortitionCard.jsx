@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import imgSortition1 from '../../assets/img/sorteio2.jpg'
-import './SortitionCard.styles.css'
 import { Col } from 'react-bootstrap'
 
+import './SortitionCard.css'
 function SortitionCard() {
   return (
     <Col md={4}>
@@ -16,6 +16,7 @@ function SortitionCard() {
             Data do sorteio: <time>16/02/1992</time>
           </span>
           <span>Status: Realizado</span>
+          <span>Validado:Não</span>
           <span>
             Vencedor: <strong>Lucas</strong>
           </span>

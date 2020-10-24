@@ -1,19 +1,58 @@
 import React from 'react'
 
-import LoginForm from '../../components/LoginForm/LoginForm'
-import { Container } from 'react-bootstrap'
-import './Signin.styles.css'
+import { Link, useHistory } from 'react-router-dom'
+import { Container, Form } from 'react-bootstrap'
+
+import Input from '../../components/Input/Input'
+import CustomButton from '../../components/CustomButton/CustomButton'
+
+import './Signin.css'
 
 function Signin() {
+  const history = useHistory()
   return (
     <Container fluid className="signin-container">
-      <LoginForm
-        isSignin={true}
-        title="Entrar"
-        btnLabel="Entrar"
-        to="/signup"
-        loginLink="Ainda não tem uma conta ?"
-      />
+      <Container className="form-container mt-5">
+        <Link
+          onClick={() => {
+            history.goBack()
+          }}
+        >
+          <i class="fas fa-arrow-left mb-4"></i>
+        </Link>
+
+        <h1 className="form-title">Entrar</h1>
+
+        <Form className="login-form">
+          <Input
+            controlId="formBasicEmail"
+            type="email"
+            label="Email"
+            placeholder="Digite seu Email"
+          />
+
+          <Input
+            controlId="formBasicPassword"
+            type="password"
+            label="Senha"
+            placeholder="Digite sua senha"
+          />
+
+          <Link
+            style={{ marginBottom: '10px' }}
+            to={'/forgot_password'}
+            className="login-link"
+          >
+            Esqueceu sua senha ?
+          </Link>
+
+          <Link to="/signup" className="login-link">
+            Ainda não tem uma conta ?
+          </Link>
+
+          <CustomButton type="submit">Entrar</CustomButton>
+        </Form>
+      </Container>
     </Container>
   )
 }

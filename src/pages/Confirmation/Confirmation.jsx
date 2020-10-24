@@ -2,17 +2,26 @@ import React, { useState } from 'react'
 import { Container, Form } from 'react-bootstrap'
 
 import ReactCodeInput from 'react-verification-code-input'
-
+import { useHistory, Link } from 'react-router-dom'
 import CustomButton from '../../components/CustomButton/CustomButton'
 
-import './Confirmation.styles.css'
+import './Confirmation.css'
 
 function Confirmation() {
   const [confirmationCode, setComfirmationCode] = useState(0)
 
+  const history = useHistory()
   return (
     <Container fluid className="confirmation-container ">
       <Container className="form-container mt-5">
+        <Link
+          onClick={() => {
+            history.goBack()
+          }}
+        >
+          <i class="fas fa-arrow-left mb-4"></i>
+        </Link>
+
         <h1 className="form-title">Confirmação</h1>
         <Form className="form">
           <Form.Text className="text-center">

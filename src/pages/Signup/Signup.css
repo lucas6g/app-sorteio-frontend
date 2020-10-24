@@ -1,6 +1,15 @@
+.signup-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: var(--gradient);
+  animation: bg-animation 25s infinite;
+  background-size: 400%;
+}
+
 .form-container {
   background-color: white;
-  width: 500px;
+  width: 90%;
   height: 818px;
   border-radius: 8px;
   display: flex;
@@ -37,4 +46,16 @@
 
 .form-container .login-form .login-link {
   color: #262626;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }

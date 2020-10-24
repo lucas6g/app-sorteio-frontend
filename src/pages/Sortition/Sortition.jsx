@@ -5,7 +5,7 @@ import { Container, Col, Row } from 'react-bootstrap'
 import imgSortition from '../../assets/img/iphone.jpg'
 
 import Custombutton from '../../components/CustomButton/CustomButton'
-import './Sortition.styles.css'
+import './Sortition.css'
 
 function Sortition() {
   return (
@@ -57,6 +57,7 @@ function Sortition() {
                 <span>
                   Data do sorteio: <time>16/02/1992</time>
                 </span>
+                <span>Validado: Não</span>
                 <span>Status: Realizado</span>
                 <span>
                   Vencedor: <strong>Lucas</strong>{' '}

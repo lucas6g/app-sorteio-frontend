@@ -32,7 +32,13 @@
 
 .sortition-content .rules .rules-list .rule-item i {
   margin-right: 10px;
-  color: green;
+  background: var(--gradient);
+  font-size: 20px;
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sortition-container .sortition-info .sortition-data {

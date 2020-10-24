@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './About.styles.css'
 import Header from '../../components/Header/Header'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import CustomButton from '../../components/CustomButton/CustomButton'
+import './About.css'
 
 function About() {
   return (

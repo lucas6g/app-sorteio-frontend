@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Pagination, Container } from 'react-bootstrap'
 
-import './Paginate.styles.css'
+import './Paginate.css'
 
 function Paginate({ sortitionPerPage, totalSortitions, paginate }) {
   //numero de paginas

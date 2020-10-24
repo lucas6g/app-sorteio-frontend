@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-import './CustomButton.styles.css'
-function CustomButton({ children, type }) {
+import './CustomButton.css'
+function CustomButton({ children, type, onClick }) {
   return (
-    <Button type={type} className="custom-button shadow-none">
+    <Button type={type} onClick={onClick} className="custom-button shadow-none">
       {children}
     </Button>
   )

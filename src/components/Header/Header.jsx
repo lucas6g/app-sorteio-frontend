@@ -3,7 +3,7 @@ import React from 'react'
 import { Navbar, Nav, Button, FormControl, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import './Header.styles.css'
+import './Header.css'
 function Header() {
   return (
     <Navbar className="navbar" expand="lg">

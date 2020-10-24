@@ -8,7 +8,7 @@ import SortitionCard from '../../components/SortitionCard/SortitionCard'
 import Paginate from '../../components/Paginate/Paginate'
 import Footer from '../../components/Footer/Footer'
 
-import './Home.styles.css'
+import './Home.css'
 // adicionar classes para sobrescrever as do boot stape
 
 function Home() {

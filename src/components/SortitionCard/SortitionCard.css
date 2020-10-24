@@ -1,6 +1,6 @@
 .sortition-card {
   width: 328px;
-  height: 470px;
+  height: 490px;
   border-radius: 6px;
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -43,6 +43,7 @@
   display: flex;
   padding: 8px;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .sortition-card .sortition-card-footer img {

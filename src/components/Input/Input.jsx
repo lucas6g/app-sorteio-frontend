@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Form } from 'react-bootstrap'
-import './Input.styles.css'
+import './Input.css'
 function Input({ controlId, type, placeholder, label }) {
   return (
     <Form.Group className="input-block" controlId={controlId}>
