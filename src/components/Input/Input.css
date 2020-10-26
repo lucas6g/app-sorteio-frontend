@@ -17,3 +17,11 @@
 .input-block .input {
   outline: none;
 }
+
+.input-block .input.error {
+  border: 2px solid red;
+}
+
+.input-block .error-message {
+  color: red;
+}

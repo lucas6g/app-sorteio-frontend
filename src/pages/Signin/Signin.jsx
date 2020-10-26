@@ -14,11 +14,12 @@ function Signin() {
     <Container fluid className="signin-container">
       <Container className="form-container mt-5">
         <Link
+          to="/#"
           onClick={() => {
             history.goBack()
           }}
         >
-          <i class="fas fa-arrow-left mb-4"></i>
+          <i className="fas fa-arrow-left mb-4"></i>
         </Link>
 
         <h1 className="form-title">Entrar</h1>

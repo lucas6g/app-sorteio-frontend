@@ -21,10 +21,11 @@ function Footer() {
             <div className="contact">
               <h4> Contato</h4>
               <a className="nav-link" href="#">
-                <i class="fab fa-whatsapp"></i> Whatsapp
+                <i className="fab fa-whatsapp"></i> Whatsapp
               </a>
               <a className="nav-link" href="#">
-                <i class="fas fa-envelope-square"></i> sorteiovalidado@gmail.com
+                <i className="fas fa-envelope-square"></i>{' '}
+                sorteiovalidado@gmail.com
               </a>
             </div>
           </Col>
@@ -33,13 +34,13 @@ function Footer() {
               <h4>Redes Socias</h4>
               <div className="social-media-line">
                 <a href="http://google.com.br">
-                  <i class="fab fa-instagram"></i>
+                  <i className="fab fa-instagram"></i>
                 </a>
                 <a href="http://google.com.br">
-                  <i class="fab fa-youtube"></i>
+                  <i className="fab fa-youtube"></i>
                 </a>
                 <a href="http://google.com.br">
-                  <i class="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f"></i>
                 </a>
               </div>
             </div>
