@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Container, Form } from 'react-bootstrap'
 import Input from '../../components/Input/Input'
 import CustomButton from '../../components/CustomButton/CustomButton'
 import * as yup from 'yup'
-import showErrorMessage from '../../utils/showErrorMessage'
+import getValidationErrors from '../../utils/getValidationErrors'
+import getApiError from '../../utils/getApiError'
+import AuthContext from '../../context/AuthContext'
 
 import './Signup.css'
 function Signup() {
+  const { signup } = useContext(AuthContext)
+
   const history = useHistory()
 
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [comfirmPassword, setComfirmPassword] = useState('')
-  const [errors, setErrors] = useState({})
+  const [validationErrors, setValidationErrors] = useState({})
+  const [apiError, setApiError] = useState({})
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -45,9 +50,17 @@ function Signup() {
       await schema.validate(data, {
         abortEarly: false, //retorna todos os erros nao apenas o primeiro erro
       })
-      setErrors({}) // caso nao aja erros
+
+      setValidationErrors({}) // caso nao aja erros de validação
+      setApiError({})
+      await signup(data)
+      history.push('/comfirmation')
     } catch (error) {
-      setErrors(showErrorMessage(error))
+      if (error instanceof yup.ValidationError) {
+        setValidationErrors(getValidationErrors(error))
+      } else if (error instanceof Object) {
+        setApiError(getApiError(error.response.data.error))
+      }
     }
   }
 
@@ -70,8 +83,10 @@ function Signup() {
             controlId="formBasicText"
             type="text"
             label="Nome de Usuario"
-            errorMessage={errors.userName}
-            error={errors.userName ? 'error' : ''}
+            errorMessage={validationErrors.userName || apiError.userName}
+            error={
+              validationErrors.userName || apiError.userName ? 'error' : ''
+            }
             placeholder="Escolha um nome"
             onChange={(e) => {
               setUserName(e.target.value)
@@ -84,8 +99,8 @@ function Signup() {
             type="text"
             label="Email"
             placeholder="Digite seu Email"
-            errorMessage={errors.email}
-            error={errors.email ? 'error' : ''}
+            errorMessage={validationErrors.email || apiError.email}
+            error={validationErrors.email || apiError.email ? 'error' : ''}
             onChange={(e) => {
               setEmail(e.target.value)
             }}
@@ -97,8 +112,8 @@ function Signup() {
             type="password"
             label="Senha"
             placeholder="Escolha uma senha"
-            errorMessage={errors.password}
-            error={errors.password ? 'error' : ''}
+            errorMessage={validationErrors.password}
+            error={validationErrors.password ? 'error' : ''}
             onChange={(e) => {
               setPassword(e.target.value)
             }}
@@ -110,8 +125,8 @@ function Signup() {
             type="password"
             label="Confirme a Senha"
             placeholder="Confirme a senha"
-            errorMessage={errors.comfirmPassword}
-            error={errors.comfirmPassword ? 'error' : ''}
+            errorMessage={validationErrors.comfirmPassword}
+            error={validationErrors.comfirmPassword ? 'error' : ''}
             onChange={(e) => {
               setComfirmPassword(e.target.value)
             }}

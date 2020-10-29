@@ -15,11 +15,12 @@ function Confirmation() {
     <Container fluid className="confirmation-container ">
       <Container className="form-container mt-5">
         <Link
+          to="/#"
           onClick={() => {
             history.goBack()
           }}
         >
-          <i class="fas fa-arrow-left mb-4"></i>
+          <i className="fas fa-arrow-left mb-4"></i>
         </Link>
 
         <h1 className="form-title">Confirmação</h1>

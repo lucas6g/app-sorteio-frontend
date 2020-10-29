@@ -10,7 +10,7 @@
 .form-container {
   background-color: white;
   width: 90%;
-  height: 818px;
+  height: 900px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,10 @@
 
 .form-container .login-form .login-link {
   color: #262626;
+}
+
+.error-message {
+  color: red;
 }
 
 @keyframes bg-animation {

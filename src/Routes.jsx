@@ -17,7 +17,7 @@ function Routes() {
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={Signin} />
-        <Route path="/confirmation" component={Confirmation} />
+        <Route path="/comfirmation" component={Confirmation} />
         <Route path="/forgot_password" component={ForgotPassword} />
         <Route path="/reset_password" component={ResetPassword} />
         <Route path="/sortition" component={Sortition} />
