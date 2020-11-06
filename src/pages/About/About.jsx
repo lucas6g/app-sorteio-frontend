@@ -2,11 +2,13 @@ import React from 'react'
 
 import Header from '../../components/Header/Header'
 import { Container, Row, Col } from 'react-bootstrap'
-
+import { useHistory } from 'react-router-dom'
 import CustomButton from '../../components/CustomButton/CustomButton'
 import './About.css'
 
 function About() {
+  const history = useHistory()
+
   return (
     <>
       <Header />
@@ -52,7 +54,13 @@ function About() {
             </div>
           </Col>
         </Row>
-        <CustomButton>Cadastrar-Se</CustomButton>
+        <CustomButton
+          onClick={() => {
+            history.push('/signup')
+          }}
+        >
+          Cadastrar-Se
+        </CustomButton>
       </Container>
     </>
   )

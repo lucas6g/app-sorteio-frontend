@@ -36,6 +36,11 @@
   caret-color: var(--gradient);
 }
 
+.error-message {
+  color: red;
+  margin-top: 8px;
+}
+
 .form-container {
   background-color: white;
   width: 500px;

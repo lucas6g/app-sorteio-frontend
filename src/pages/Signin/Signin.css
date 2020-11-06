@@ -44,6 +44,11 @@
   width: 100%;
 }
 
+.error-message {
+  color: red;
+  margin-bottom: 8px;
+}
+
 .form-container .login-form .login-link {
   color: #262626;
 }

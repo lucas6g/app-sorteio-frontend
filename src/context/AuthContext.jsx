@@ -5,7 +5,9 @@ const AuthContext = createContext()
 
 export function AuthProvider({ children }) {
   //é possivel passar no useState uma funcao que busca os dados para inicializar o estado
-  const [userData, setUserData] = useState({}) //funcao para inicio do estado
+  //funcao para inicio do estado
+
+  const [isLogin, setIsLogin] = useState(false)
 
   async function signup({ userName, email, password }) {
     const userInfo = {
@@ -18,18 +20,26 @@ export function AuthProvider({ children }) {
 
     const { token, insertedUser: user } = response.data
 
-    localStorage.setItem('token', token)
-    localStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('@Sorteio Validado:token', token)
+    localStorage.setItem('@Sorteio Validado:user', JSON.stringify(user))
+  }
 
-    const data = {
-      token,
-      user,
+  async function signin({ email, password }) {
+    const userInfo = {
+      email: email,
+      password: password,
     }
-    setUserData(data)
+
+    const response = await api.post('/signin', userInfo)
+
+    const { token, user } = response.data
+
+    localStorage.setItem('@Sorteio Validado:token', token)
+    localStorage.setItem('@Sorteio Validado:user', JSON.stringify(user))
   }
 
   return (
-    <AuthContext.Provider value={{ signup, userData }}>
+    <AuthContext.Provider value={{ signup, isLogin, setIsLogin, signin }}>
       {children}
     </AuthContext.Provider>
   )

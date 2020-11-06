@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Container, Form } from 'react-bootstrap'
+
 import Input from '../../components/Input/Input'
 import CustomButton from '../../components/CustomButton/CustomButton'
+
 import * as yup from 'yup'
 import getValidationErrors from '../../utils/getValidationErrors'
 import getApiError from '../../utils/getApiError'
@@ -10,7 +12,7 @@ import AuthContext from '../../context/AuthContext'
 
 import './Signup.css'
 function Signup() {
-  const { signup } = useContext(AuthContext)
+  const { signup, setIsLogin } = useContext(AuthContext)
 
   const history = useHistory()
 
@@ -51,14 +53,17 @@ function Signup() {
         abortEarly: false, //retorna todos os erros nao apenas o primeiro erro
       })
 
-      setValidationErrors({}) // caso nao aja erros de validação
       setApiError({})
+      setValidationErrors({}) // caso nao aja erros de validação
       await signup(data)
-      history.push('/comfirmation')
+      setIsLogin(true)
+      history.push('/confirmation')
     } catch (error) {
       if (error instanceof yup.ValidationError) {
+        setApiError({})
         setValidationErrors(getValidationErrors(error))
       } else if (error instanceof Object) {
+        setValidationErrors({}) // caso nao aja erros de validação
         setApiError(getApiError(error.response.data.error))
       }
     }

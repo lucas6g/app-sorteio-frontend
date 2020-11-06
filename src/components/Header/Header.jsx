@@ -24,11 +24,6 @@ function Header() {
           <Link className="nav-link" to="/about">
             Sobre
           </Link>
-
-          <Nav.Link className="nav-link" href="#">
-            Contato
-          </Nav.Link>
-
           <Form className="form-search" inline>
             <FormControl
               type="text"
